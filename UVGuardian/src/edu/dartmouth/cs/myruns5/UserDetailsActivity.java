@@ -109,8 +109,11 @@ public class UserDetailsActivity extends Activity {
 								ParseUser currentUser = ParseUser
 										.getCurrentUser();
 								currentUser.put("profile", userProfile);
+								currentUser.put("fb_id", user.getId());
+								currentUser.put("name",user.getName());
+								currentUser.put("UVI", 9);
 								currentUser.saveInBackground();
-
+								
 								// Show the user info
 								updateViewsWithProfileInfo();
 							} catch (JSONException e) {
