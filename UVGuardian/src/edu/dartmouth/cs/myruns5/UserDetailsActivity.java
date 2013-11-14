@@ -36,6 +36,8 @@ public class UserDetailsActivity extends Activity {
 
 		setContentView(R.layout.userdetails);
 
+		
+		//Textview GUI
 		userProfilePictureView = (ProfilePictureView) findViewById(R.id.userProfilePicture);
 		userNameView = (TextView) findViewById(R.id.userName);
 		userLocationView = (TextView) findViewById(R.id.userLocation);
@@ -55,6 +57,7 @@ public class UserDetailsActivity extends Activity {
 		Session session = ParseFacebookUtils.getSession();
 		if (session != null && session.isOpened()) {
 			makeMeRequest();
+			goToMain();
 		}
 	}
 
@@ -109,6 +112,9 @@ public class UserDetailsActivity extends Activity {
 								ParseUser currentUser = ParseUser
 										.getCurrentUser();
 								currentUser.put("profile", userProfile);
+								currentUser.put("fb_id", user.getId());
+								currentUser.put("name", user.getName());
+								currentUser.put("UVI", 7);
 								currentUser.saveInBackground();
 
 								// Show the user info
@@ -199,4 +205,10 @@ public class UserDetailsActivity extends Activity {
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(intent);
 	}
+	
+	private void goToMain() {
+		//Intent intent = new Intent(this, UserDetailsActivity.class);
+			Intent intent = new Intent(this, MainActivity.class);
+			startActivity(intent);
+		}
 }
