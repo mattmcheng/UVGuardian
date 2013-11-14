@@ -55,6 +55,7 @@ public class UserDetailsActivity extends Activity {
 		Session session = ParseFacebookUtils.getSession();
 		if (session != null && session.isOpened()) {
 			makeMeRequest();
+			showMainActivity();
 		}
 	}
 
@@ -111,7 +112,8 @@ public class UserDetailsActivity extends Activity {
 								currentUser.put("profile", userProfile);
 								currentUser.put("fb_id", user.getId());
 								currentUser.put("name",user.getName());
-								currentUser.put("UVI", 9);
+								currentUser.put("UVGuardianMyRuns5", true);
+								currentUser.put("UVI",9);
 								currentUser.saveInBackground();
 								
 								// Show the user info
@@ -194,6 +196,11 @@ public class UserDetailsActivity extends Activity {
 
 		// Go to the login view
 		startLoginActivity();
+	}
+	
+	private void showMainActivity(){
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 
 	private void startLoginActivity() {
