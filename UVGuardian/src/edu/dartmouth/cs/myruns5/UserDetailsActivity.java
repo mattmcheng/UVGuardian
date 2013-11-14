@@ -1,5 +1,8 @@
 package edu.dartmouth.cs.myruns5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +20,10 @@ import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.ProfilePictureView;
+import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class UserDetailsActivity extends Activity {
@@ -116,7 +122,7 @@ public class UserDetailsActivity extends Activity {
 								currentUser.put("name", user.getName());
 								currentUser.put("UVI", 7);
 								currentUser.saveInBackground();
-
+								getFacebookFriends();
 								// Show the user info
 								updateViewsWithProfileInfo();
 							} catch (JSONException e) {
@@ -206,9 +212,48 @@ public class UserDetailsActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	//goes to main display page
 	private void goToMain() {
 		//Intent intent = new Intent(this, UserDetailsActivity.class);
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 		}
-}
+	
+	//get the facebook friends of users that are also using application
+	
+	private void getFacebookFriends()
+	{
+	Request.executeMyFriendsRequestAsync(ParseFacebookUtils.getSession(), new Request.GraphUserListCallback() {
+
+		  @Override
+		  public void onCompleted(List<GraphUser> users, Response response) {
+		    if (users != null) {
+		      List<String> friendsList = new ArrayList<String>();
+		      for (GraphUser user : users) {
+		        friendsList.add(user.getId());
+		      }
+
+		      // Construct a ParseUser query that will find friends whose
+		      // facebook IDs are contained in the current user's friend list.
+		      ParseQuery friendQuery = ParseQuery.getUserQuery();
+		      friendQuery.whereContainedIn("fb_id", friendsList);
+
+		      // findObjects will return a list of ParseUsers that are friends with
+		      // the current user
+		      try {
+				List<ParseObject> friendUsers = friendQuery.find();
+				ParseUser currentUser = ParseUser
+						.getCurrentUser();
+				currentUser.put("fb_friends", friendUsers);
+				currentUser.saveInBackground();
+				
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    }
+		  }
+		});
+	}
+	}
+

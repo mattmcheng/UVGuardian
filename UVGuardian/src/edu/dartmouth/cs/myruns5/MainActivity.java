@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
 		Fragment startFragment = new StartFragment();
 		Fragment historyFragment = new HistoryFragment();
 		Fragment settingsFragment = new SettingsFragment();
+		Fragment graphFragment = new GraphFragment();
 	//	Fragment uviFragment = new CurrentUVIFragment();
 		
 		//initialize parse
@@ -56,6 +57,10 @@ public class MainActivity extends Activity {
 		ActionBar.Tab settingsTab = bar.newTab().setText(getString(R.string.settingsTab_title));
 		settingsTab.setTabListener(new MyTabListener(settingsFragment, getApplicationContext()));
 		
+		
+		ActionBar.Tab graphTab = bar.newTab().setText(getString(R.string.graphTab_title));
+		graphTab.setTabListener(new MyTabListener(graphFragment, getApplicationContext()));
+		
 	//	ActionBar.Tab uviTab = bar.newTab().setText(getString(R.string.uviTab_title));
 	//	uviTab.setTabListener(new MyTabListener(uviFragment, getApplicationContext()));
 		
@@ -64,6 +69,7 @@ public class MainActivity extends Activity {
 		bar.addTab(startTab);
 		bar.addTab(historyTab);
 		bar.addTab(settingsTab);
+		bar.addTab(graphTab);
 	//	bar.addTab(uviTab);
 		
 		// track statistics around parse
