@@ -141,6 +141,7 @@ public class UserDetailsActivity extends Activity {
 		request.executeAsync();
 
 	}
+	
 
 	private void updateViewsWithProfileInfo() {
 		ParseUser currentUser = ParseUser.getCurrentUser();
