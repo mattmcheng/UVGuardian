@@ -15,6 +15,9 @@ import com.parse.Parse;
 import com.parse.ParseAnalytics;
 import com.parse.ParseObject;
 
+import com.fima.chartview.ChartView;
+import com.fima.chartview.LinearSeries;
+import com.fima.chartview.LinearSeries.LinearPoint;
 
 public class MainActivity extends Activity {
 	public static final String KEY_TAB_INDEX = "tab index";
@@ -41,7 +44,7 @@ public class MainActivity extends Activity {
 		Fragment startFragment = new StartFragment();
 		Fragment historyFragment = new HistoryFragment();
 		Fragment settingsFragment = new SettingsFragment();
-		Fragment graphFragment = new GraphFragment();
+		GraphFragment graphFragment = new GraphFragment();
 	//	Fragment uviFragment = new CurrentUVIFragment();
 		
 		//initialize parse
@@ -72,6 +75,8 @@ public class MainActivity extends Activity {
 		bar.addTab(graphTab);
 	//	bar.addTab(uviTab);
 		
+		
+		// this code may be redundant
 		// track statistics around parse
 		ParseAnalytics.trackAppOpened(getIntent());
 		//testing parse
