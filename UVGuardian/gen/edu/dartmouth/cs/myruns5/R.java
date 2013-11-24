@@ -473,7 +473,7 @@ containing a value of this type.
         public static final int ButtonCancel=0x7f05002f;
         public static final int ButtonChange=0x7f050024;
         public static final int ButtonSave=0x7f05002e;
-        public static final int ButtonStart=0x7f050048;
+        public static final int ButtonStart=0x7f05004a;
         public static final int EditMajor=0x7f05002d;
         public static final int EditTextBirthday=0x7f050026;
         public static final int EditTextEmail=0x7f050027;
@@ -482,17 +482,19 @@ containing a value of this type.
         public static final int RadioButtonGenderF=0x7f05002a;
         public static final int RadioButtonGenderM=0x7f05002b;
         public static final int SpinnerClass=0x7f05002c;
-        public static final int Spinner_ActivityType=0x7f050047;
-        public static final int Spinner_InputType=0x7f050046;
+        public static final int Spinner_ActivityType=0x7f050049;
+        public static final int Spinner_InputType=0x7f050048;
         public static final int avatar=0x7f050023;
         public static final int avg_speed_stats=0x7f05001a;
         public static final int black=0x7f050003;
         public static final int bold=0x7f050001;
         public static final int bottom_buttons=0x7f05001f;
+        public static final int button_add_friend=0x7f050046;
         public static final int button_cancel=0x7f050017;
         public static final int button_map_cancel=0x7f050021;
         public static final int button_map_save=0x7f050020;
         public static final int button_save=0x7f050016;
+        public static final int button_show_graph=0x7f050047;
         public static final int calories_stats=0x7f05001d;
         public static final int chart_view=0x7f050045;
         public static final int climb_stats_stats=0x7f05001c;
@@ -518,8 +520,8 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f050043;
         public static final int condensed=0x7f050004;
         public static final int cur_speed_stats=0x7f05001b;
-        public static final int current_uvi=0x7f050052;
-        public static final int current_uvi_title=0x7f050051;
+        public static final int current_uvi=0x7f050054;
+        public static final int current_uvi_title=0x7f050053;
         public static final int distance_stats=0x7f05001e;
         public static final int edit_display_activity_type=0x7f05000e;
         public static final int edit_display_calorie=0x7f050012;
@@ -530,12 +532,12 @@ containing a value of this type.
         public static final int edit_display_heart_rate=0x7f050013;
         public static final int fragment_container=0x7f050015;
         public static final int hybrid=0x7f05000d;
-        public static final int imageView1=0x7f050053;
+        public static final int imageView1=0x7f050055;
         public static final int italic=0x7f050002;
         public static final int large=0x7f050009;
         public static final int light=0x7f050005;
-        public static final int loginButton=0x7f050049;
-        public static final int logoutButton=0x7f050050;
+        public static final int loginButton=0x7f05004b;
+        public static final int logoutButton=0x7f050052;
         public static final int mainLayout=0x7f050022;
         public static final int map=0x7f050018;
         public static final int medium=0x7f050006;
@@ -548,12 +550,12 @@ containing a value of this type.
         public static final int terrain=0x7f05000c;
         public static final int thin=0x7f050007;
         public static final int type_stats=0x7f050019;
-        public static final int userDateOfBirth=0x7f05004e;
-        public static final int userGender=0x7f05004d;
-        public static final int userLocation=0x7f05004c;
-        public static final int userName=0x7f05004b;
-        public static final int userProfilePicture=0x7f05004a;
-        public static final int userRelationship=0x7f05004f;
+        public static final int userDateOfBirth=0x7f050050;
+        public static final int userGender=0x7f05004f;
+        public static final int userLocation=0x7f05004e;
+        public static final int userName=0x7f05004d;
+        public static final int userProfilePicture=0x7f05004c;
+        public static final int userRelationship=0x7f050051;
     }
     public static final class layout {
         public static final int activity_display_entry=0x7f030000;
@@ -576,12 +578,13 @@ containing a value of this type.
         public static final int com_facebook_search_bar_layout=0x7f030011;
         public static final int com_facebook_usersettingsfragment=0x7f030012;
         public static final int fragment_graph=0x7f030013;
-        public static final int fragment_history=0x7f030014;
-        public static final int fragment_start=0x7f030015;
-        public static final int main=0x7f030016;
-        public static final int test=0x7f030017;
-        public static final int userdetails=0x7f030018;
-        public static final int uvg_fragment_current_uvi=0x7f030019;
+        public static final int fragment_graph_main=0x7f030014;
+        public static final int fragment_history=0x7f030015;
+        public static final int fragment_start=0x7f030016;
+        public static final int main=0x7f030017;
+        public static final int test=0x7f030018;
+        public static final int userdetails=0x7f030019;
+        public static final int uvg_fragment_current_uvi=0x7f03001a;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;

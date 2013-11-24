@@ -8,8 +8,7 @@
     tools:context="edu.dartmouth.cs.myruns5.GraphActivity"
     >
 
- 
-    
+
             <com.fima.chartview.ChartView
         android:id="@+id/chart_view"
         android:layout_width="match_parent"
@@ -23,5 +22,7 @@
         chartview:gridLinesHorizontal="5"
         chartview:gridLinesVertical="5"
         chartview:leftLabelWidth="56dp" />
+            
+            
 
 </LinearLayout>
